@@ -1,0 +1,21 @@
+LARAVEL FRAMEWORK PHPUNIT REMOTE CODE EXECUTION
+
+Severity: High Severity
+File: eval-stdin.php
+Full Path Exploit : http://target/vendor/phpunit/phpunit/src/Util/PHP/eval-stdin.php
+Berpengaruh pada versi : Before 4.8.28 and 5.x before 5.6.3
+
+Deskripsi:
+PHPUnit adalah kerangka kerja pengujian berorientasi programmer untuk PHP. 
+PHPUnit 4.x versi sebelum 4.8.28 dan 5.x versi sebelum 5.6.3 memungkinkan Remote Code Execution untuk mengeksekusi 
+kode PHP sewenang-wenang melalui data HTTP POST yang dimulai dengan substring. 
+Kerentanan ini dapat dieksploitasi hanya jika folder / vendor dapat diakses oleh publik.
+
+Solusi:
+Tingkatkan ke versi terbaru dari PHPUnit. Masalah ini diperbaiki dalam versi PHPUnit 4.8.28 dan 5.6.3
+
+Referensi:
+https://nvd.nist.gov/vuln/detail/CVE-2017-9841
+https://exploit.linuxsec.org/laravel-phpunit-remote-code-execution/
+
+Thanks to: Error Squad Bangladesh - LinuxSec.ORG
