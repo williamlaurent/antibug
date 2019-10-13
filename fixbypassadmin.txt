@@ -1,0 +1,38 @@
+Bagaimana cara menutup bug "bypass admin" pada form login.
+Thanks to: Exploiter.ID & Indonesian Code Party
+Credit: @w1337icp
+
+BEFORE:: (Example file /admin/login.php)
+
+<?php
+session_start();
+error_reporting(0);
+include("config/config.php");
+if(isset($_POST['submit']))
+{
+	$username=$_POST['username'];
+	$password=md5($_POST['password']);
+$ret=mysqli_query($con,"SELECT * FROM admin WHERE username='$username' and password='$password'");
+$num=mysqli_fetch_array($ret);
+
+tambah "addslashes" di depan var "username"
+rubah menjadi:
+
+AFTER:: (Example file /admin/login.php)
+
+Example file /admin/login.php:
+<?php
+session_start();
+error_reporting(0);
+include("config/config.php");
+if(isset($_POST['submit']))
+{
+	$username=addslashes($_POST['username']);
+	$password=md5($_POST['password']);
+$ret=mysqli_query($con,"SELECT * FROM admin WHERE username='$username' and password='$password'");
+$num=mysqli_fetch_array($ret);
+
+Bypass Admin bug fixed, well done.
+
+regards~
+@w1337icp
