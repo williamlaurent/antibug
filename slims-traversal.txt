@@ -1,0 +1,33 @@
+Exploit Title: Slims CMS Library Management File Upload & Path Traversal with Burpsuite
+Affected Version: 8.x.x
+Vendor Homepage: https://slims.web.id/goslims/?wpdmpro=slims-8-3-1-akasia
+
+Description: Biasa pengguna SLIMS diantaranya organisasi, pengadilan & universitas di Indonesia, tidak juga SLIMS digunakan univeritas luar. Jadi ada fileupload gitu yang kita bisa pindahin arah filenya sesuka attacker.
+
+Demo Admin Username/Password: admin/admin
+
+Full path: http://localhost/admin/modules/bibliography/pop_attach.php 
+Vulnerable File: pop_attach.php
+
+<!-- Ini saya ambil dari salah satu codingnya -->
+
+$file_upload->setUploadDir(REPO_BASE_DIR.DIRECTORY_SEPARATOR.str_replace('/', DIRECTORY_SEPARATOR, $file_dir));
+
+<!-- End -->
+
+Buka burpsuite, nyalahkan intercept, lalu masukan nama author & file yang ingin di upload, klik upload buttonnya.
+Cek di burpsuite liat intercept dan lakukan seperti SS berikut: http://prntscr.com/pmjggd (Proof)
+
+Jadi sebenarnya file nya akan terunggah di directory http://localhost/repository/yourfile.txt
+
+tapi dibagian "file2attach" kita isi dibagian kosongnya dengan ../
+ini menggunakan Path Traversal ( https://www.owasp.org/index.php/Path_Traversal )
+
+Regards
+William Laurent
+
+Thanks to: Exploitkita.org - Indonesian Code Party - Exploiter.ID - ManadoGhost
+
+Reference Link:
+https://www.owasp.org/index.php/Path_Traversal
+https://cxsecurity.com/ascii/WLB-2018050260
