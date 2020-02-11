@@ -1,7 +1,5 @@
-<html>
-<title>Wordpress DoS [http://press.traveloka.com/]</title>
 <-- williamlaurent404@gmail.com -->
-<pre>
+
 Author: William Laurent
 Vulnerable Website: https://press.traveloka.com/
 Timestamp: 02/11/2020
@@ -36,4 +34,3 @@ Referensi:
 https://www.exploit-db.com/exploits/43968
 https://baraktawily.blogspot.com/2018/02/how-to-dos-29-of-world-wide-websites.html
 https://daffa.info/bug-dos-via-wp-admin-load-scripts-php-pada-cms-wordpress/
-</pre>
