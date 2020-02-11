@@ -1,0 +1,39 @@
+<html>
+<title>Wordpress DoS [http://press.traveloka.com/]</title>
+<-- williamlaurent404@gmail.com -->
+<pre>
+Author: William Laurent
+Vulnerable Website: https://press.traveloka.com/
+Timestamp: 02/11/2020
+
+CVE : CVE-2018-6389
+Detail : CVE-2018-6389 adalah salah satu bug WordPress DOS Attack dimana 
+penyerangan memanfaatkan fitur load-script dan load-style.php
+Vulnerability: DoS
+
+Tools yang di gunakan:
+https://github.com/WazeHell/CVE-2018-6389/blob/master/CVE-2018-6389.py
+
+Payload yang saya gunakan :
+http://target/wp-admin/load-scripts.php?c=1&load=editor,common,user-profile,media-widgets,media-gallery/
+http://press.traveloka.com/wp-admin/load-scripts.php?c=1&load=editor,common,user-profile,media-widgets,media-gallery/
+
+Deskripsi:
+Selama penyerang terus mengirim permintaan itu ke server berulang kali.
+maka saya akan secara efektif melakukan/menyebabkan DoS.
+
+Impact:
+Dapat membuat website mengalami down Karena bisa diakses siapapun yang berarti hacker dapat
+mengirim request sebesar 3 atau 4MB secara berulang-ulang sehingga menghabiskan memory.
+
+Solusinya dengan menambah sedikit script di file bername .htaccess, berikut kodenya:
+
+RewriteCond %{HTTP_REFERER} !example.com [NC]
+RewriteCond %{THE_REQUEST} .php[\ /?].*HTTP/ [NC]
+RewriteRule ^wp-admin/load-scripts.php$ – [R=403,L]
+
+Referensi:
+https://www.exploit-db.com/exploits/43968
+https://baraktawily.blogspot.com/2018/02/how-to-dos-29-of-world-wide-websites.html
+https://daffa.info/bug-dos-via-wp-admin-load-scripts-php-pada-cms-wordpress/
+</pre>
